@@ -6,12 +6,9 @@ function romanToInt(s: string): number {
     let result: number = 0;
     
     for(let i = 0; i < s.length; i++){
-        // Check if current character's value is less than next character's value
         if(i < s.length - 1 && romanToInt[s[i]] < romanToInt[s[i + 1]]){
-            // Subtraction case: subtract current value
             result -= romanToInt[s[i]];
         } else {
-            // Normal case: add current value
             result += romanToInt[s[i]];
         }
     }
